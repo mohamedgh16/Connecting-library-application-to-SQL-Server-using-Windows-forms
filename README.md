@@ -19,9 +19,13 @@ Before we begin, it would help you as the reader to have the following:
 If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and for SQL server you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads). If you are new to Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
 
 
-### Getting started
+### Creating the pubs database
 
-First of all you should 
+First of all you should create the pubs database Query in SQL server so it can be later connected to the application.
+You can find the pubs database [here](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instpubs.sql).
+
+
+
 
 
 
