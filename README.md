@@ -35,8 +35,11 @@ You can download the project from [here](https://github.com/mohamedgh16/Library-
 
 ### Add form
 
-After opening the project first we will work 
+After opening the project first we will work on the Add form, As you can see it has 3 buttons, each button for a different operation.
 
+![Mainform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Mainform.png).
+
+double click 
 
 
 
