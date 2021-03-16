@@ -30,6 +30,13 @@ After copying the database paste it in a new Query and excute it, you should be 
 
 ### Application main form
 
+We will use a project that has a main form & add another 3 forms that would add edit & delete books from the database.
+You can download the project from [here](https://github.com/mohamedgh16/Library-app-code-in-windowsforms).
+
+### Add form
+
+After opening the project first we will work 
+
 
 
 
