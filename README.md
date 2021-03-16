@@ -32,15 +32,18 @@ After copying the database paste it in a new Query and excute it, you should be 
 
 We will use a project that has a main form & add another 3 forms that would add edit & delete books from the database.
 You can download the project from [here](https://github.com/mohamedgh16/Library-app-code-in-windowsforms).
-
-### Add form
-
-After opening the project first we will work on the Add form, As you can see it has 3 buttons, each button for a different operation.
-
+After opening the project first we will work on the main form, As you can see it has 3 buttons, each button for a different operation.
 ![Mainform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Mainform.png).
 
-double click 
 
+Add 3 more tabs next to the Title tab to use it later, then add 4 more columns to the datagridview to show the data of the library.
+Also dont forget to change the colors of the forms & the buttons to what ever that suits your taste.
+
+It should look like this
+
+### Add form 
+
+Now we need to work on the Add form
 
 
 
