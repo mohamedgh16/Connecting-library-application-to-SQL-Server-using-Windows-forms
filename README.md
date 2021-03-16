@@ -36,10 +36,10 @@ After opening the project first we will work on the main form, As you can see it
 ![Mainform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Mainform.png).
 
 
-Add 3 more tabs next to the Title tab to use it later, then add 4 more columns to the datagridview to show the data of the library.
+Add a refresh button and 3 more tabs next to the Title tab to use it later, then add 4 more columns to the datagridview to show the data of the library.
 Also dont forget to change the colors of the forms & the buttons to what ever that suits your taste.
 
-It should look like this
+It should look like this ![Afterformwork](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Afterformwork.png).
 
 ### Add form 
 
