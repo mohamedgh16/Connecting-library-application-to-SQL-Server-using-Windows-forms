@@ -24,6 +24,12 @@ If you don’t have Visual Studio installed on your computer, you can check this
 First of all you should create the pubs database Query in SQL server so it can be later connected to the application.
 You can find the pubs database [here](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instpubs.sql).
 
+After copying the database paste it in a new Query and excute it, you should be able to see the the name of the database "pubs" to the left of your screen.
+![CreatingPubs](url)
+
+###
+
+
 
 
 
