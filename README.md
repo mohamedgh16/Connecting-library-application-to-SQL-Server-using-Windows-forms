@@ -151,8 +151,7 @@ Deleting a book will require only the title id, we will request the id from the 
    private void Delbu_Click(object sender, EventArgs e)
         {            
             string dell = Del.Text;
-            string delete1 = "delete from roysched where roysched.title_id='"+dell+"'; delete from
-            sales where sales.title_id='"+dell+"';delete from titles where titles.title_id='"+dell+"';";
+            string delete1 = "delete from roysched where roysched.title_id='"+dell+"'; delete from sales where sales.title_id='"+dell+"';delete from titles where titles.title_id='"+dell+"';";
             if (Del.Text.Length != 0)
             {
                 DataBaseConnection.sqlCommandQueryReader(delete1);
