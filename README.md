@@ -44,9 +44,10 @@ Also, don't forget to change the colors of the forms & the buttons to whatever s
 It should look like this ![Afterformwork](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Afterformwork.png).
 
 ### Database connection
-In order to connect to SQL server in c#, we will be ```c#
-using System.Data.SqlClient;
-                                         ```
+In order to connect to SQL server in c#, we will be
+```c#
+using System.Data.SqlClient; 
+```          
 The following code snippet will connect your computer to the database, but note that you need to put your own computer name instead of (HP-PAVILION).                                          
 ```c#
 static SqlConnection connectionString = new SqlConnection(@"Data Source=HP-PAVILION;Initial Catalog=pubs;Integrated Security=True");
