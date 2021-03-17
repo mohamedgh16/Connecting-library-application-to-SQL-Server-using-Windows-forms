@@ -13,18 +13,18 @@ Before we begin, it would help you as the reader to have the following:
 
 - A basic understanding of C# programming language.
 - A basic understanding of Windows forms.
-- Visual studio installed on your system.
-- SQL server installed on your system.
+- Visual Studio installed on your system.
+- SQL Server installed on your system.
 
-If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and for SQL server you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads). If you are new to Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
+If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and for SQL Server you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads). If you are new to Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
 
 
 ### Creating the pubs database
 
-First of all you should create the pubs database Query in SQL server so it can be later connected to the application.
+First of all, you should create the pubs database Query in SQL server so it can be later connected to the application.
 You can find the pubs database [here](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instpubs.sql).
 
-After copying the database paste it in a new Query and excute it, you should be able to see the the name of the database "pubs" to the left of your screen.
+After copying the database paste it in a new Query and execute it, you should be able to see the name of the database "pubs" to the left of your screen.
 
 ![CreatingPubs](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/CreatingPubs.png).
 
@@ -38,13 +38,13 @@ After opening the project first we will work on the main form, As you can see it
 ![Mainform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Mainform.png).
 
 
-Add a refresh button and 3 more tabs next to the Title tab to use it later, then add 4 more columns to the datagridview to show the data of the library.
-Also dont forget to change the colors of the forms & the buttons to what ever that suits your taste.
+Add a refresh button and 3 more tabs next to the Title tab to use later, then add 4 more columns to the datagridview to show the data of the library.
+Also, don't forget to change the colors of the forms & the buttons to whatever suits your taste.
 
 It should look like this ![Afterformwork](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Afterformwork.png).
 
 ### Database connection
-In order to connect to SQL server in c# we will be ```c#
+In order to connect to SQL server in c#, we will be ```c#
 using System.Data.SqlClient;
                                          ```
 The following code snippet will connect your computer to the database, but note that you need to put your own computer name instead of (HP-PAVILION).                                          
@@ -159,7 +159,7 @@ We will request the id from the user and delete the book from the database using
 ```
 ### Refresh button
 
-The refresh button will simply display the information from the database, and will be needed to be clicked after any operation to keep the information updated.
+The refresh button will simply display the information from the database and will be needed to be clicked after any operation to keep the information updated.
 
 ```c#
  private void refresh_Click(object sender, EventArgs e)
@@ -226,4 +226,4 @@ string q5 = " select * from stores left outer join discounts on stores.stor_id =
 
 ### Conclusion
 
-In this tutorial we have learned how to connect an application to a database and convert any string to a Query that can be understood by the SQL server, we have also leared how to add edit & delete a book from the database & display the information of the books authors publishers & the discounts of each store. Don't forget to test out the code to fully understand how it works.
+In this tutorial we have learned how to connect an application to a database and convert any string to a Query that can be understood by the SQL server, we have also learned how to add edit & delete a book from the database & display the information of the books authors publishers & the discounts of each store. Don't forget to test out the code to fully understand how it works.
