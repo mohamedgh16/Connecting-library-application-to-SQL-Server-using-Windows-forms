@@ -116,8 +116,9 @@ We will request the information from the user and insert them into the database 
 ```
 ### Edit form 
 
-Editing a book will require the present title id & title name of the book, then the new title name title id & title price.
+Editing a book will require the present title id & the present title name of the book, then the new title name title id & title price.
 We will request the information from the user and edit them inside of the database using the sqlCommandQueryReader method.
+
 ![Editform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Editform.png).
 
 
@@ -144,6 +145,7 @@ private void Edit_Click(object sender, EventArgs e)
 
 Deleting a book will require only the title id.
 We will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
+
 ![Deleteform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Deleteform.png).
 
 ```c#
