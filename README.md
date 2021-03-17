@@ -181,13 +181,13 @@ The author's tab will display the id first name phone address city & count of ea
 ![Authors](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Authors.png).
 
 ```c#
-string sqlQuery2 = "select * from authors order by au_fname asc";
+ string sqlQuery2 = "select * from authors order by au_fname asc";
             DataTable dt2 = DataBaseConnection.dataAdapterSelect(sqlQuery2);
             foreach (DataRow dr in dt2.Rows)
             {dataGridView2.Rows.Add(dr["au_id"], dr["au_fname"], dr["phone"], dr["address"], dr["city"]);}
             
-              string sqlQuery3 = "SELECT authors.au_fname,count(titleauthor.title_id) as authorcount 
-              FROM authors, titleauthor WHERE authors.au_id = titleauthor.au_id GROUP BY authors.au_fname";
+              string sqlQuery3 = "SELECT authors.au_fname,count(titleauthor.title_id)
+              as authorcount FROM authors, titleauthor WHERE authors.au_id = titleauthor.au_id GROUP BY authors.au_fname";
             DataTable dt3 = DataBaseConnection.dataAdapterSelect(sqlQuery3);
             foreach (DataRow dr in dt3.Rows)
             {dataGridView3.Rows.Add(dr["authorcount"]);}
