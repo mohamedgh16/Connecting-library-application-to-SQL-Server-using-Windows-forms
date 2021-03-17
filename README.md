@@ -80,7 +80,7 @@ public static void sqlCommandQueryReader(string sqlQuery)
 ```
 
  
-The following code will use the dataAdapterSelect method to covert the Select string to a Query and display it inside the datagridview.
+The following code will use the dataAdapterSelect method to convert the Select string to a Query and display it inside the datagridview.
 ```c#
  string sqlQuery = "SELECT title_id,title,type,pub_name,price,ytd_sales FROM titles inner join publishers ON titles.pub_id = publishers.pub_id";
 
