@@ -100,7 +100,7 @@ We will request the information from the user and insert them into the database 
 ![Addform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Addform.png).
 
 ```c#
- private void addButton_Click(object sender, EventArgs e)
+  private void addButton_Click(object sender, EventArgs e)
         {   string titleID = titleIDTextBox.Text;
             string titleName = titleNameTextBox.Text;
             string titletype = Titletype.Text;
@@ -108,8 +108,8 @@ We will request the information from the user and insert them into the database 
             string pricee = price.Text;
             string pubbdate = pubdate.Text;
 
-            string insertt = "insert into titles(title_id,title,type,pub_id,price,pubdate)
-            values('" + titleID + "','" + titleName + "','" + titletype + "','" + pubid + "','" + pricee + "','" + pubbdate + "');";
+            string insertt = "insert into titles(title_id,title,type,pub_id,price,pubdate) values('" + titleID + 
+            "','" + titleName + "','" + titletype + "','" + pubid + "','" + pricee + "','" + pubbdate + "');";
 
             DataBaseConnection.sqlCommandQueryReader(insertt);
             MessageBox.Show("Information inserted!");}
