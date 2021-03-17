@@ -26,7 +26,7 @@ You can find the pubs database [here](https://github.com/microsoft/sql-server-sa
 
 After copying the database paste it in a new Query and execute it, you should be able to see the name of the database "pubs" to the left of your screen.
 
-![CreatingPubs](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/CreatingPubs.png).
+![CreatingPubs](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/CreatingPubs.png).
 
 ### Application main form
 
@@ -35,13 +35,13 @@ You can download the project from [here](https://github.com/mohamedgh16/Library-
 
 After opening the project first we will work on the main form, As you can see it has 3 buttons, each button for a different operation.
 
-![Mainform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Mainform.png).
+![Mainform](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Mainform.png).
 
 
 Add a refresh button and 3 more tabs next to the Title tab to use later, then add 4 more columns to the datagridview to show the data of the library.
 Also, don't forget to change the colors of the forms & the buttons to whatever suits your taste.
 
-It should look like this ![Afterformwork](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Afterformwork.png).
+It should look like this ![Afterformwork](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Afterformwork.png).
 
 ### Database connection
 In order to connect to SQL server in c#, we will be
@@ -97,7 +97,7 @@ The following code will use the dataAdapterSelect method to convert the Select s
 
 Adding a new book will require the title id title name title type publisher id publisher date & the price of the book.
 We will request the information from the user and insert them into the database using the sqlCommandQueryReader method.
-![Addform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Addform.png).
+![Addform](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Addform.png).
 
 ```c#
   private void addButton_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ We will request the information from the user and insert them into the database 
 Editing a book will require the present title id & the present title name of the book, then the new title name title id & title price.
 We will request the information from the user and edit them inside of the database using the sqlCommandQueryReader method.
 
-![Editform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Editform.png).
+![Editform](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Editform.png).
 
 
 ```c#
@@ -145,7 +145,7 @@ private void Edit_Click(object sender, EventArgs e)
 
 Deleting a book will require only the title id, we will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
 
-![Deleteform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Deleteform.png).
+![Deleteform](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Deleteform.png).
 
 ```c#
    private void Delbu_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ The refresh button will simply display the information from the database and wil
 
 The author's tab will display the id first name phone address city & count of each book the author wrote.
 
-![Authors](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Authors.png).
+![Authors](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Authors.png).
 
 ```c#
  string sqlQuery2 = "select * from authors order by au_fname asc";
@@ -195,7 +195,7 @@ The author's tab will display the id first name phone address city & count of ea
 
 The Publisher's tab will display the information of the publisher using the id.
 
-![Publishers](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Publishers.png).
+![Publishers](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Publishers.png).
 
 ```c#
 private void checkpub_Click(object sender, EventArgs e)
@@ -215,7 +215,7 @@ private void checkpub_Click(object sender, EventArgs e)
 
 The Store's tab will display the discounts available using a left outer join Query.
 
-![Store](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Store.png).
+![Store](/engineering-education/connecting-library-application-to-SQL-Server-using-Windows-forms/Store.png).
 
 ```c#
 string q5 = " select * from stores left outer join discounts on stores.stor_id = discounts.stor_id ";           
