@@ -143,8 +143,7 @@ private void Edit_Click(object sender, EventArgs e)
 
 ### Delete form
 
-Deleting a book will require only the title id.
-We will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
+Deleting a book will require only the title id, we will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
 
 ![Deleteform](https://github.com/mohamedgh16/Connecting-library-application-to-SQL-Server-using-Windows-forms/blob/main/Deleteform.png).
 
