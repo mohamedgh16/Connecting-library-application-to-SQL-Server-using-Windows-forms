@@ -16,7 +16,12 @@ Before we begin, it would help you as the reader to have the following:
 - Visual Studio installed on your system.
 - SQL Server installed on your system.
 
-If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and for SQL Server you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads). If you are new to Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
+### Installation guide
+
+- To install Visual Studio and setup the work environment, you can check [this](https://www.geeksforgeeks.org/setting-environment-c-sharp/) article on how to set up the C# environment in Visual Studio.
+- To install SQL Server, you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
+- If you are new to Windows forms, you can check [this](/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial which would help you understand the basic concepts.
+
 
 
 ### Creating the pubs database
