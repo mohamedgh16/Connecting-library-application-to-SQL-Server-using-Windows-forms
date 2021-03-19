@@ -24,12 +24,15 @@ Before we begin, it would help you as the reader to have the following:
 
 
 
-### Creating the pubs database
+### Creating the Pubs database
 
-First of all, you should create the pubs database Query in SQL server so it can be later connected to the application.
+**Pubs** is a database that is used by programmers as a learning tool, like fetching data through queries,
+it contains a large amount of information about books, authors, publishers, and store sales.
+
+First of all, you should create the Pubs database Query in SQL server so it can be later connected to the application.
 You can find the pubs database [here](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instpubs.sql).
 
-After copying the database paste it in a new Query and execute it, you should be able to see the name of the database "pubs" to the left of your screen.
+After copying the database query, paste it in a new query and execute it, you should be able to see the name of the database "pubs" to the left of your screen.
 
 ![CreatingPubs](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/CreatingPubs.png).
 
@@ -43,13 +46,13 @@ After opening the project first we will work on the main form, As you can see it
 ![Mainform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Mainform.png).
 
 
-Add a refresh button and 3 more tabs next to the Title tab to use later, then add 4 more columns to the datagridview to show the data of the library.
+Add a refresh button and 3 more tabs next to the Title tab to use later, then add 4 more columns to the `DataGridView1` to show the data of the library.
 Also, don't forget to change the colors of the forms & the buttons to whatever suits your taste.
 
 It should look like this ![Afterformwork](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Afterformwork.png).
 
 ### Database connection
-In order to connect to SQL server in c#, we will be
+In order to connect to SQL server in C#, we will be
 ```c#
 using System.Data.SqlClient; 
 ```          
@@ -100,7 +103,7 @@ The following code will use the dataAdapterSelect method to convert the Select s
 
 ### Add form 
 
-Adding a new book will require the title id title name title type publisher id publisher date & the price of the book.
+Adding a new book will require the `titleID` `titleName` `titletype` `pubid` `pubbdate` & the `price` of the book.
 We will request the information from the user and insert them into the database using the sqlCommandQueryReader method.
 ![Addform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Addform.png).
 
@@ -121,7 +124,7 @@ We will request the information from the user and insert them into the database 
 ```
 ### Edit form 
 
-Editing a book will require the present title id & the present title name of the book, then the new title name title id & title price.
+Editing a book will require the present `oldid` & the present `oldname` of the book, then the new `Titlename` `Titletype` & `Titleprice`.
 We will request the information from the user and edit them inside of the database using the sqlCommandQueryReader method.
 
 ![Editform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Editform.png).
@@ -148,7 +151,7 @@ private void Edit_Click(object sender, EventArgs e)
 
 ### Delete form
 
-Deleting a book will require only the title id, we will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
+Deleting a book will require only the `titleid`, we will request the id from the user and delete the book from the database using the sqlCommandQueryReader method.
 
 ![Deleteform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Deleteform.png).
 
@@ -181,7 +184,7 @@ The refresh button will simply display the information from the database and wil
 
 ### Authors tab
 
-The author's tab will display the id first name phone address city & count of each book the author wrote.
+The author's tab will display the `au_id` `au_fname` `phone` `address` `city` & `count` of each book the author wrote.
 
 ![Authors](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Authors.png).
 
@@ -198,7 +201,7 @@ The author's tab will display the id first name phone address city & count of ea
 ```
 ### Publishers tab
 
-The Publisher's tab will display the information of the publisher using the id.
+The Publisher's tab will display the information of the `publishers` using the `pub_id`.
 
 ![Publishers](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Publishers.png).
 
