@@ -2,16 +2,16 @@
 
 ### Introduction
 
-windows forms is one of the best tools used in making applications.
-With windows forms, you can make a variety of applications, from a mini calculator to a library application that connects to a database. In this tutorial, we will connect a library application using Windows forms to a database using SQL Server.
 
-In this tutorial, we will use a windows forms project and work on it, we will add new forms that will add edit & delete books from the library, we will also manage the authors, the stores & the publishers stored in the database. We will display the information of each attribute & refresh it each time a change accrues.
+Windows forms is one of the best tools used in making applications. With windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database. According to [Mincrosoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), Windows Forms is a UI framework for building Windows desktop apps. It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality such as drag-and-drop placement of visual controls makes it easy to build desktop apps.
+
+In this tutorial, we will connect a library application to a SQL database server using Windows forms. We will use a windows forms project to add new forms, edit or delete from the library. Also, we will manage the authors, the stores & the publishers in the database, and display the information of each attribute & refresh it each time, a change accrues.
 
 ### Prerequisites
 
 Before we begin, it would help you as the reader to have the following:
 
-- A basic understanding of C# programming language.
+- A basic understanding of the C# programming language.
 - A basic understanding of Windows forms.
 - Visual Studio installed on your system.
 - SQL Server installed on your system.
