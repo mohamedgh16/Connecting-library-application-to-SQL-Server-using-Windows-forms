@@ -174,12 +174,19 @@ Deleting a book will require only the `titleid`, we will request the id from the
 The refresh button will simply display the information from the database and will be needed to be clicked after any operation to keep the information updated.
 
 ```c#
- private void refresh_Click(object sender, EventArgs e)
-        { dataGridView1.Rows.Clear();
-          string sqlQuery = "SELECT title_id,title,type,pub_name,price,ytd_sales FROM titles inner join publishers ON titles.pub_id = publishers.pub_id";
-          DataTable dt = DataBaseConnection.dataAdapterSelect(sqlQuery);
-          foreach (DataRow dr in dt.Rows)
-        { dataGridView1.Rows.Add(dr["title_id"], dr["pub_name"], dr["price"], dr["ytd_sales"], dr["title"], dr["type"]);}}
+  private void refresh_Click(object sender, EventArgs e)
+        {
+         // This piece of code will run the query that will show the data of the library on the DataGridview, and each time the user clicks the button, it will refresh the data.
+            dataGridView1.Rows.Clear();
+            string sqlQuery = "SELECT title_id,title,type,pub_name,price,ytd_sales FROM titles inner join publishers ON titles.pub_id = publishers.pub_id";
+
+            DataTable dt = DataBaseConnection.dataAdapterSelect(sqlQuery);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dataGridView1.Rows.Add(dr["title_id"], dr["pub_name"], dr["price"], dr["ytd_sales"], dr["title"], dr["type"]);
+            }
+        }
 ```
 
 ### Authors tab
