@@ -64,6 +64,7 @@ Each Select Query will be written in a string and get converted to SQL server th
 ```c#
  public static DataTable dataAdapterSelect(string sqlQuery)
         {
+        // This method will convert any Select string to a query.
             SqlDataAdapter DataAdapter = new SqlDataAdapter(sqlQuery, connectionString);
             DataTable dt = new DataTable();
             DataAdapter.Fill(dt);
@@ -72,6 +73,7 @@ Each Select Query will be written in a string and get converted to SQL server th
 ```
 The following method will be used to Add Edit & delete the information from the database.
 ```c#
+// This method will convert any string that would manipulate the data to a query.
 public static void sqlCommandQueryReader(string sqlQuery)
         {
             SqlCommand myCommand = new SqlCommand(sqlQuery, connectionString);
@@ -90,6 +92,7 @@ public static void sqlCommandQueryReader(string sqlQuery)
  
 The following code will use the dataAdapterSelect method to convert the Select string to a Query and display it inside the datagridview.
 ```c#
+// This query is responsible for displaying the information about the books on the DataGridView.
  string sqlQuery = "SELECT title_id,title,type,pub_name,price,ytd_sales FROM titles inner join publishers ON titles.pub_id = publishers.pub_id";
 
             DataTable dt = DataBaseConnection.dataAdapterSelect(sqlQuery);
@@ -108,6 +111,7 @@ We will request the information from the user and insert them into the database 
 ![Addform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Addform.png).
 
 ```c#
+// We will be using the sqlCommandQueryReader method to add a new book the database.
   private void addButton_Click(object sender, EventArgs e)
         {   string titleID = titleIDTextBox.Text;
             string titleName = titleNameTextBox.Text;
@@ -131,22 +135,26 @@ We will request the information from the user and edit them inside of the databa
 
 
 ```c#
-private void Edit_Click(object sender, EventArgs e)
+ private void Edit_Click(object sender, EventArgs e)
         {
+        // We will be using the sqlCommandQueryReader method to edit an existing book from the database. 
             string Titlename = Tname.Text;
             string Titletype = Ttype.Text;
             string Titleprice = Tprice.Text;
+
             string oid = oldid.Text;
             string oname = oldname.Text;
             if (Tname.Text.Length != 0 && Ttype.Text.Length != 0 &&
-                oldname.Text.Length != 0 && oldid.Text.Length != 0 && Tprice.Text.Length != 0){
-                string editt = "update titles set title ='" + Titlename + "',type='" + Titletype + "',price='"
-                + Titleprice + "'where titles.title_id ='" + oid + "' and titles.title='" + oname + "';";
+                oldname.Text.Length != 0 && oldid.Text.Length != 0 && Tprice.Text.Length != 0)
+            {
+                string editt = "update titles set title ='" + Titlename + "',type='" + Titletype + "',price='" + Titleprice + "'where titles.title_id ='" + oid + "' and titles.title='" + oname + "';";
 
                 DataBaseConnection.sqlCommandQueryReader(editt);
-                MessageBox.Show("Title has been edited!");}
+                MessageBox.Show("Title has been edited!");
+            }
             else
-                MessageBox.Show("Missing information!");}
+                MessageBox.Show("Missing information!");
+        }
 ```
 
 ### Delete form
@@ -157,7 +165,8 @@ Deleting a book will require only the `titleid`, we will request the id from the
 
 ```c#
    private void Delbu_Click(object sender, EventArgs e)
-        {            
+        {         
+        // We will be using the sqlCommandQueryReader method to delete an existing book from the database.
             string dell = Del.Text;
             string delete1 = "delete from roysched where roysched.title_id='"+dell+"'; delete from sales where sales.title_id='"+dell+"';delete from titles where titles.title_id='"+dell+"';";
             if (Del.Text.Length != 0)
@@ -176,7 +185,7 @@ The refresh button will simply display the information from the database and wil
 ```c#
   private void refresh_Click(object sender, EventArgs e)
         {
-         // This piece of code will run the query that will show the data of the library on the DataGridview, and each time the user clicks the button, it will refresh the data.
+         // This query will show the data of the library on the DataGridview, and each time the user clicks the button, it will refresh the data.
             dataGridView1.Rows.Clear();
             string sqlQuery = "SELECT title_id,title,type,pub_name,price,ytd_sales FROM titles inner join publishers ON titles.pub_id = publishers.pub_id";
 
@@ -196,15 +205,22 @@ The author's tab will display the `au_id` `au_fname` `phone` `address` `city` & 
 ![Authors](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Authors.png).
 
 ```c#
- string sqlQuery2 = "select * from authors order by au_fname asc";
+// This query will display all the information about the authors on the DataGridView.
+string sqlQuery2 = "select * from authors order by au_fname asc";
             DataTable dt2 = DataBaseConnection.dataAdapterSelect(sqlQuery2);
+
             foreach (DataRow dr in dt2.Rows)
-            {dataGridView2.Rows.Add(dr["au_id"], dr["au_fname"], dr["phone"], dr["address"], dr["city"]);}
-            
-              string sqlQuery3 = "SELECT authors.au_fname,count(titleauthor.title_id) as authorcount FROM authors, titleauthor WHERE authors.au_id = titleauthor.au_id GROUP BY authors.au_fname";
+            {
+                dataGridView2.Rows.Add(dr["au_id"], dr["au_fname"], dr["phone"], dr["address"], dr["city"]);
+            }
+// This query will only display the count of the books that the author wrote on the DataGridView.
+            string sqlQuery3 = "SELECT authors.au_fname,count(titleauthor.title_id) as authorcount FROM authors, titleauthor WHERE authors.au_id = titleauthor.au_id GROUP BY authors.au_fname";
             DataTable dt3 = DataBaseConnection.dataAdapterSelect(sqlQuery3);
+
             foreach (DataRow dr in dt3.Rows)
-            {dataGridView3.Rows.Add(dr["authorcount"]);}
+            {
+                dataGridView3.Rows.Add(dr["authorcount"]);
+            }
 ```
 ### Publishers tab
 
@@ -213,6 +229,7 @@ The Publisher's tab will display the information of the `publishers` using the `
 ![Publishers](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Publishers.png).
 
 ```c#
+// This query will display all the information about the publishers on the DataGridView.
 private void checkpub_Click(object sender, EventArgs e)
             { string idd = puid.Text; 
             string sqlQuery00 = "select * from  publishers where publishers.pub_id='" + idd + "'";
@@ -233,6 +250,7 @@ The Store's tab will display the discounts available using a left outer join Que
 ![Store](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Store.png).
 
 ```c#
+// This query will display the discounts using the discount id & the store id.
 string q5 = " select * from stores left outer join discounts on stores.stor_id = discounts.stor_id ";           
             DataTable q55 = DataBaseConnection.dataAdapterSelect(q5);
             
